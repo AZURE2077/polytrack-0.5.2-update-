@@ -41818,11 +41818,12 @@
         ,
         wN = function() {
             if (null != kN(this, sN, "f")) {
+                const e = "https://www.sites.google.com/view/poly-track";
                 kN(this, sN, "f").textContent = kN(this, jD, "f").get("It seems like you are playing an unofficial version of {0}. For the most up-to-date version please visit the original source:", ["PolyTrack"]);
-                const e = document.createElement("a");
-                e.href = QT(),
-                e.textContent = QT(),
-                kN(this, sN, "f").appendChild(e),
+                const t = document.createElement("a");
+                t.href = e,
+                                t.textContent = e,
+                kN(this, sN, "f").appendChild(t),
                 kN(this, sN, "f").classList.remove("hidden")
             }
             kN(this, oN, "f").classList.remove("hidden");
@@ -41891,9 +41892,9 @@
                 ))),
                 kN(this, XD, "f").src = "images/logo.svg",
                 kN(this, YD, "f").appendChild(kN(this, XD, "f")),
-                jT() ? (xN(this, sN, document.createElement("div"), "f"),
+                xN(this, sN, document.createElement("div"), "f"),
                 kN(this, sN, "f").className = "warning-message",
-                kN(this, YD, "f").appendChild(kN(this, sN, "f"))) : xN(this, sN, null, "f"),
+                kN(this, YD, "f").appendChild(kN(this, sN, "f")),
                 xN(this, eN, kN(this, GD, "m", fN).call(this, e, t, s, c, a, d, o, l, m, g, v, w, C, P, I, R), "f"),
                 xN(this, JD, document.createElement("div"), "f"),
                 kN(this, JD, "f").className = "info",
