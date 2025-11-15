@@ -24881,7 +24881,7 @@
         const fu = JSON.parse('{"rE":"0.5.2","l$":{"r":1,"M":4}}');
         const mu = "kodub"
           , gu = !1
-          , vu = "https://vps.kodub.com/"
+          , vu = "https://polytrack-backend-testing.htmlunblockedgames.workers.dev/"
           , wu = fu.l$.r;
         if (!Number.isSafeInteger(wu) || wu < 1)
             throw new Error("package.json beta version property must be a positive integer");
@@ -37707,7 +37707,7 @@
             switch (mu) {
             case "kodub":
             case "jest":
-                e = [/\.kodub\.com$/, /^htmlunblockedgames\.github\.io$/];
+                e = [/\.kodub\.com$/, /^htmlunblockedgames\.github\.io$/, /^localhost$/, /^127\.0\.0\.1$/];
                 break;
             case "electron":
             case "capacitor":
@@ -37774,7 +37774,7 @@
             e[e.InvalidDuplicate = 3] = "InvalidDuplicate",
             e[e.InvalidManual = 4] = "InvalidManual"
         }(VT || (VT = {}));
-        var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, uC, pC, vC, wC, yC, bC, AC, kC = function(e, t, n, i, r) {
+var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, uC, pC, vC, wC, yC, bC, AC, kC = function(e, t, n, i, r) {
             if ("m" === i)
                 throw new TypeError("Private method is not writable");
             if ("a" === i && !r)
@@ -37954,7 +37954,6 @@
                       , r = 0;
                     EC(this, ZT, "f").getLeaderboard(EC(this, $T, "f").getCurrentUserProfile().tokenHash, EC(this, YT, "f"), r, n, null).then(( ({total: a, entries: s, userEntry: o}) => {
                         if (!i.isCancelled) {
-                            kC(this, mC, 1, "f"),
                             EC(this, aC, "f").textContent = EC(this, XT, "f").get("{0} players", [GT(a)]),
                             EC(this, aC, "f").classList.add("fade-in");
                             for (let e = 0; e < s.length; e++) {
