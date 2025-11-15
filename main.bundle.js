@@ -37703,34 +37703,40 @@
             n
         }
         function jT() {
-            let e;
+            const e = location.hostname ? location.hostname.toLowerCase() : ""
+              , t = location.pathname ? location.pathname.toLowerCase() : "";
+            let n = null;
+            try {
+                document.referrer && (n = new URL(document.referrer.toLowerCase()))
+            } catch (e) {
+                n = null
+            }
+            const i = n ? n.hostname : ""
+              , r = n ? n.pathname : ""
+              , a = (e,t)=>"sites.google.com" === e && t.startsWith("/view/poly-track")
+              , s = (e,t)=>a(e, t) || a(i, r);
             switch (mu) {
             case "kodub":
             case "jest":
-                e = [/\.kodub\.com$/, /^sites\.google\.com\/view\/poly-track/];
-                break;
+                return !s(e, t);
             case "electron":
             case "capacitor":
                 return !1;
             case "itch":
-                e = [/itch\.io$/, /itch\.zone$/];
-                break;
+                return !(/itch\.io$/.test(e) || /itch\.zone$/.test(e));
             case "armorgames":
-                e = [/^19464\.cache\.armorgames\.com$/];
-                break;
+                return !/^19464\.cache\.armorgames\.com$/.test(e);
             case "gato":
-                e = [/^gato-files-prod\.s3\.amazonaws\.com$/];
-                break;
+                return !/^gato-files-prod\.s3\.amazonaws\.com$/.test(e);
             case "crazygames":
-                e = [/\.crazygames\.com$/];
-                break;
+                return !/\.crazygames\.com$/.test(e);
             case "poki":
-                e = [/\.poki\.com$/, /\.poki-gdn\.com$/];
-                break;
+                return !(/\.poki\.com$/.test(e) || /\.poki-gdn\.com$/.test(e));
             case "y8":
-                e = [/\.y8\.com$/]
+                return !/\.y8\.com$/.test(e);
+            default:
+                return !0
             }
-            return !e.some((e => e.test(location.hostname)))
         }
         function QT() {
             let e;
