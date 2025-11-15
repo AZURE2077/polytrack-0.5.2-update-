@@ -24881,7 +24881,7 @@
         const fu = JSON.parse('{"rE":"0.5.2","l$":{"r":1,"M":4}}');
         const mu = "kodub"
           , gu = !1
-          , vu = "https://polytrack-backend-testing.htmlunblockedgames.workers.dev/"
+          , vu = "https://polytrack-backend.htmlunblockedgames.workers.dev/"
           , wu = fu.l$.r;
         if (!Number.isSafeInteger(wu) || wu < 1)
             throw new Error("package.json beta version property must be a positive integer");
@@ -37707,7 +37707,7 @@
             switch (mu) {
             case "kodub":
             case "jest":
-                e = [/\.kodub\.com$/, /^htmlunblockedgames\.github\.io$/, /^localhost$/, /^127\.0\.0\.1$/];
+                e = [/\.kodub\.com$/, /^htmlunblockedgames\.github\.io$/];
                 break;
             case "electron":
             case "capacitor":
@@ -37946,6 +37946,14 @@ var KT, qT, YT, XT, ZT, JT, $T, eC, tC, nC, iC, rC, aC, sC, oC, lC, cC, hC, dC, 
                         const e = document.createElement("p");
                         e.className = "error-message",
                         e.textContent = "Leaderboards are not yet supported on custom tracks.",
+                        EC(this, sC, "f").appendChild(e),
+                        EC(this, sC, "f").removeChild(EC(this, oC, "f"));
+                        return
+                    }
+                    if (jT()) {
+                        const e = document.createElement("p");
+                        e.className = "error-message",
+                        e.textContent = EC(this, XT, "f").get("Unofficial versions of the game cannot access the leaderboard"),
                         EC(this, sC, "f").appendChild(e),
                         EC(this, sC, "f").removeChild(EC(this, oC, "f"));
                         return

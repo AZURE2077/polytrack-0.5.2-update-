@@ -56,6 +56,19 @@ Run it before every deploy to catch regressions without reopening the bundle.
 
 All client ↔ server interactions (leaderboards, profiles, recordings, verifier workflows) are reverse-engineered and documented in `API.md`. Use that file if you plan to swap the Kodub backend for your own service—every endpoint, request payload, and validation rule is enumerated with references back to `main.bundle.js`.
 
+This repo currently targets the **testing** backend Worker at `https://polytrack-backend-testing.htmlunblockedgames.workers.dev/`. Update `main.bundle.js` (search for `vu =`) if you change environments.
+
+### Backend environments
+
+| Purpose   | Worker URL                                                     | D1 DB                             | Notes                               |
+|-----------|----------------------------------------------------------------|-----------------------------------|-------------------------------------|
+| Testing   | `https://polytrack-backend-testing.htmlunblockedgames.workers.dev/` | `polytrack-backend-test` (empty)  | Default for this build.             |
+| Production | `https://polytrack-backend.htmlunblockedgames.workers.dev/`       | `polytrack-backend`               | Schema only, data cleared.          |
+
+Both Workers share the same code; deployment is driven via `wrangler --env testing` vs. default.
+
+> CORS is open for `http://localhost:8082`, `http://127.0.0.1:8082`, and `https://htmlunblockedgames.github.io`, so you can run the client locally without additional proxies.
+
 ---
 
 ## Host Allow-List
