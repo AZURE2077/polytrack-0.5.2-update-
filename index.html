@@ -1,10 +1,17 @@
 <!doctype html>
 <html>
     <head>
-        <!-- Panic Button -->
-<a href="https://vle.learning.moe.edu.sg" id="panicBtn">
+<!-- Panic Button -->
+<a href="#" id="panicBtn">
   panic button
 </a>
+
+<script>
+  document.getElementById("panicBtn").onclick = function(e) {
+    e.preventDefault();
+    window.top.location.href = "https://vle.learning.moe.edu.sg";
+  };
+</script>
 
 <style>
   #panicBtn {
@@ -13,18 +20,17 @@
     left: 20px;               
     z-index: 9999;            
             
-    padding: 20px 40px;        /* BIGGER click area */
-    background-color: #0066cc; /* blue */
-    color: #ffeb3b;            /* yellow */
+    padding: 20px 40px;
+    background-color: #0066cc;
+    color: #ffeb3b;
     text-decoration: none;
     font-weight: bold;
-    font-size: 9px;            /* small text */
+    font-size: 9px;
     border-radius: 8px;
     
     font-family: Arial, sans-serif;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    
-    display: inline-block;     /* ensures padding works properly */
+    display: inline-block;
     transition: 0.2s ease;
   }
 
